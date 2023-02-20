@@ -25,3 +25,12 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
 
+
+
+/** Praktikum 3 */
+
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function() {
+        //
+    });
+});
