@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeWebController extends Controller
 {
-    //
+    public function home(){
+        return 'Selamat Datang di Educa Studio';
+    }
 }
