@@ -121,34 +121,10 @@ use Illuminate\Support\Facades\Route;
 
 
 //03_Praktikum_Web_Lanjut_satu
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/products', function () {
-    return view('products');
-});
-
-Route::get('/news', function () {
-    return view('news');
-});
-
-Route::get('/program', function () {
-    return view('program');
-});
-
-Route::get('/about-us', function () {
-    return view('about-us');
-});
-
-Route::get('contact-us', function () {
-    return view('contact-us');
-});
-
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::prefix('category')->group(function () {
+Route::prefix('products')->group(function () {
     Route::get('/', [ProductsController::class, 'index']);
 });
 
@@ -158,6 +134,6 @@ Route::prefix('program')->group(function () {
     Route::get('/', [ProgramController::class, 'index']);
 });
 
-Route::get('/about-us', [AboutUsController::class, 'index']);
+Route::get('about-us', [AboutUsController::class, 'index']);
 
 Route::resource('contact-us', ContactUsController::class)->only(['index']);
